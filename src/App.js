@@ -5,15 +5,15 @@ import queryString from 'query-string';
 let defaultStyle = {
   color: '#fff'
 };
-let fakeServerData = {
+let damidataServer = {
   user: {
-    name: 'David',
+    name: 'Aykut',
     playlists: [
       {
-        name: 'My favorites',
+        name: 'My PlayList',
         songs: [
-          {name: 'Beat It', duration: 1345}, 
-          {name: 'Cannelloni Makaroni', duration: 1236},
+          {name: 'Trust', duration: 1345}, 
+          {name: 'Night Likes', duration: 1236},
           {name: 'Rosa helikopter', duration: 70000}
         ]
       }
@@ -24,8 +24,8 @@ let fakeServerData = {
 class PlaylistCounter extends Component {
   render() {
     return (
-      <div style={{...defaultStyle, width: "40%", display: 'inline-block'}}>
-        <h2>{this.props.playlists.length} playlists</h2>
+      <div class="PlayListCounter" style={{width: "40%", display: 'inline-block'}}>
+        <h2>TotalPlayList = {this.props.playlists.length}</h2>
       </div>
     );
   }
@@ -42,18 +42,6 @@ class HoursCounter extends Component {
     return (
       <div style={{...defaultStyle, width: "40%", display: 'inline-block'}}>
         <h2>{Math.round(totalDuration/60)} hours</h2>
-      </div>
-    );
-  }
-}
-
-class Filter extends Component {
-  render() {
-    return (
-      <div style={defaultStyle}>
-        <img/>
-        <input type="text" onKeyUp={event => 
-          this.props.onTextChange(event.target.value)}/>
       </div>
     );
   }
@@ -130,9 +118,6 @@ class App extends Component {
           </h1>
           <PlaylistCounter playlists={playlistToRender}/>
           <HoursCounter playlists={playlistToRender}/>
-          <Filter onTextChange={text => {
-              this.setState({filterString: text})
-            }}/>
           {playlistToRender.map(playlist => 
             <Playlist playlist={playlist} />
           )}

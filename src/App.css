@@ -8,6 +8,9 @@ html, body {
 .App text {
   color: aliceblue;
 }
+.PlayListCounter {
+  color: #1ed760;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
