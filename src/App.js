@@ -25,7 +25,7 @@ class PlaylistCounter extends Component {
   render() {
     return (
       <div class="PlayListCounter" style={{width: "40%", display: 'inline-block'}}>
-        <h2>TotalPlayList = {this.props.playlists.length}</h2>
+        <h2>TotalPlayList : {this.props.playlists.length}</h2>
       </div>
     );
   }
@@ -46,6 +46,7 @@ class HoursCounter extends Component {
     );
   }
 }
+
 
 class Playlist extends Component {
   render() {
@@ -112,8 +113,8 @@ class App extends Component {
     return (
       <div className="App">
         {this.state.user ?
-        <div>
-          <h1 style={{...defaultStyle, 'font-size': '54px'}}>
+        <div class="header">
+          <h1>
             {this.state.user.name}'s Playlists
           </h1>
           <PlaylistCounter playlists={playlistToRender}/>
@@ -124,7 +125,7 @@ class App extends Component {
         </div> : <button onClick={() => {
             window.location = window.location.href.includes('localhost') 
               ? 'http://localhost:8888/login' 
-              : 'https://better-playlists-backend.herokuapp.com/login' }
+              :'' }
           }
           style={{padding: '20px', 'font-size': '50px', 'margin-top': '20px'}}>Sign in with Spotify</button>
         }
