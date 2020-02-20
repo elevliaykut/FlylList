@@ -14,7 +14,7 @@ I decided to make free time project using Spotify API to see the playlists of a 
 
 <hr></hr>
 
-🎉 You can see frontend server via https://github.com/elevliaykut/FlylList
+🎉 You can see frontend server via https://github.com/elevliaykut/Flylist
 
 <hr></hr>
 
