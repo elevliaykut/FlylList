@@ -33,15 +33,9 @@ class PlaylistCounter extends Component {
 
 class HoursCounter extends Component {
   render() {
-    let allSongs = this.props.playlists.reduce((songs, eachPlaylist) => {
-      return songs.concat(eachPlaylist.songs)
-    }, [])
-    let totalDuration = allSongs.reduce((sum, eachSong) => {
-      return sum + eachSong.duration
-    }, 0)
     return (
-      <div style={{...defaultStyle, width: "40%", display: 'inline-block'}}>
-        <h2>{Math.round(totalDuration/60)} hours</h2>
+      <div style={{width: "60%", display: 'inline-block'}}>
+        <h2>Recently played</h2>
       </div>
     );
   }
@@ -53,7 +47,7 @@ class Playlist extends Component {
     let playlist = this.props.playlist
     return (
       <div style={{...defaultStyle, display: 'inline-block', width: "25%"}}>
-        <img src={playlist.imageUrl} style={{width: '60px'}}/>
+        <img src={playlist.imageUrl} style={{width: '180px'}}/>
         <h3>{playlist.name}</h3>
         <ul>
           {playlist.songs.map(song => 
@@ -114,9 +108,9 @@ class App extends Component {
       <div className="App">
         {this.state.user ?
         <div class="header">
-          <h1>
-            {this.state.user.name}'s Playlists
-          </h1>
+          <h2>
+            {this.state.user.name}' Playlist
+          </h2>
           <PlaylistCounter playlists={playlistToRender}/>
           <HoursCounter playlists={playlistToRender}/>
           {playlistToRender.map(playlist => 

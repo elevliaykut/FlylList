@@ -1,6 +1,6 @@
 
 html, body {
-  background-color: black;
+  background-color: #000000;
 }
 .App {
   text-align: center;
@@ -9,7 +9,7 @@ html, body {
   color: aliceblue;
 }
 .PlayListCounter {
-  color: #1ed760;
+  color: aliceblue;
 }
 .header, h1 {
   color: aliceblue;
