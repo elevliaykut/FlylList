@@ -24,6 +24,8 @@ I decided to make free time project using Spotify API to see the playlists of a 
 
 <hr></hr>
 
-<img src=".src/../src/assets/images/playlist.png" width="95%" height="395"/>
+<p align="center">
+  <img src=".src/../src/assets/images/playlist.png" width="95%" height="395"/>
+</p>
 
 <hr></hr>
